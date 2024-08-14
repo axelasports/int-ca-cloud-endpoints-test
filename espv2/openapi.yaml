@@ -1,0 +1,75 @@
+swagger: '2.0'
+info:
+  title: Cloud Endpoints test
+  description: Sample API on Cloud Endpoints with a Cloud Run backend and GCE
+  version: 1.0.0
+host: espv2-4i7f6o7b2a-an.a.run.app
+schemes:
+  - https
+produces:
+  - application/json
+paths:
+  /:
+    get:
+      summary: Get Root backend-1
+      operationId: backend-1-root
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+      x-google-backend:
+        address: https://backend-1-4i7f6o7b2a-an.a.run.app/
+        protocol: h2
+
+  /test1:
+    get:
+      summary: Get test1
+      operationId: backend-1-test1
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+      x-google-backend:
+        address: https://backend-1-4i7f6o7b2a-an.a.run.app/test1
+        protocol: h2
+
+  /test2:
+    get:
+      summary: Get test2
+      operationId: backend-1-test2
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+      x-google-backend:
+        address: https://backend-1-4i7f6o7b2a-an.a.run.app/test2
+        protocol: h2
+
+  /test3:
+    get:
+      summary: Get test3
+      operationId: backend-2-test3
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+      x-google-backend:
+        address: https://backend-2-4i7f6o7b2a-an.a.run.app/test3
+        protocol: h2
+
+  /test4:
+    get:
+      summary: Get test4
+      operationId: backend-2-test4
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+      x-google-backend:
+        address: https://backend-2-4i7f6o7b2a-an.a.run.app/test4
+        protocol: h2
